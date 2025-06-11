@@ -1,10 +1,10 @@
 import java.util.*;
 class Solution {
     public int solution(int n) {
-        int[] arr = new int[(n/2)+1];
-        for (int i = 1; i < (n/2)+1; i++){
-            arr[i] = 2*i;
+        int answer = 0;
+        for(int i=0;i<n+1;i+=2){
+            answer+=i;
         }
-        return Arrays.stream(arr).sum();
+        return answer;
     }
 }
