@@ -1,21 +1,15 @@
+import java.util.*;
 class Solution {
     public String solution(String rsp) {
-        String answer = "";
-        String[] rspList = rsp.split("");
+        Map<String, String> map = new HashMap<>();
+        map.put("2","0");
+        map.put("0","5");
+        map.put("5","2");
         
-        for(String str : rspList){
-            switch(str){
-                case "0":
-                    answer += "5";
-                    break;
-                case "2":
-                    answer += "0";
-                    break;
-                case "5":
-                    answer += "2";
-                    break;
-            }
+        StringBuilder answer = new StringBuilder();
+        for(int i = 0; i<rsp.length();i++){
+            answer.append(map.get(rsp.substring(i,i+1)));
         }
-        return answer;
+        return answer.toString();
     }
 }
