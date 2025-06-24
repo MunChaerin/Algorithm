@@ -5,14 +5,10 @@ class Solution {
         for(String str : dic){
             exist = 0;
             for(String s : spell){
-                if(str.contains(s)){
-                    exist += 1;
-                }
+                if(str.contains(s)) exist ++;
             }
-            if(exist>=spell.length){
-                answer++;
-            }
+            if(exist==spell.length) return 1;
         }
-        return answer>0?1:2;
+        return 2;
     }
 }
