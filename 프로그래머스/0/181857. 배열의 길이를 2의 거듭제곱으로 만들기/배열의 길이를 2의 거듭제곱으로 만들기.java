@@ -1,20 +1,10 @@
 import java.util.*;
 class Solution {
     public int[] solution(int[] arr) {
-        List<Integer> answer = new ArrayList<>();
-        for (int num : arr) {
-            answer.add(num);
+        int len = 1;
+        while(len<arr.length){
+            len *= 2;
         }
-        while(!powerOfTwo(answer.size())){
-            answer.add(0);
-        }
-        return answer.stream().mapToInt(Integer::intValue).toArray();
-    }
-    boolean powerOfTwo(int num){
-        while(num>2){
-            if(num%2==1) return false;
-            num/=2;
-        }
-        return true;
+        return Arrays.copyOf(arr,len);
     }
 }
